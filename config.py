@@ -1,5 +1,6 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
+from info import USERNAME, PASSWORD
 
 
 class Config:
@@ -8,11 +9,12 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_USE_TLS = True # TLS传输层安全协议，在此处应打开，确保安全传输
+    MAIL_DEBUG = True # DEBUG调试打开是方便我们接受到任何关于flask-mail的错误信息
+    MAIL_USERNAME = USERNAME # os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = PASSWORD # os.environ.get('MAIL_PASSWORD')
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
+    FLASKY_MAIL_SENDER = 'Flasky Admin <527790840@qq.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
 
     @staticmethod
